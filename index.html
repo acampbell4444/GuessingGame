@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet"  type="text/css" href="css/index.css">
   <title>Guessing Game</title>
 </head>
 <body>
   <div id='app'>
 
     <div id='headers'>
-      <h1>Guessing Game</h1>
+      <h1 class='head'>Guessing Game</h1>
     </div>
 
     <div id='main'>
       <div id='input-parent'>
         <form>
-          <input type='text' name="guess">
-          <input type='submit' name="Submit">
+          <input type='text' placeholder='#' autofocus='on' name="guess">
+          <input type='submit' value="Submit Your Guess">
         </form>
-        <!-- Player's guess input, and submit button -->
       </div>
 
       <div id='guesses'>
-        <!-- unordered list of guesses -->
         <ul>
           <li></li>
           <li></li>
@@ -41,23 +39,15 @@
 
 
 
-  <div id='footer'>
-    <div>
-      <div class=''>
-        <img src='images/grayceHopper.png'></img>
-      </div>
-
-      <div class=''>
-        <h4>Project by Alan Campbell</h4>
-      </div>
-
-      <div class=''>
-        <img src='images/FSlogo.png'></img>
-      </div>
-
-
+  <footer>
+    <div class='table'>
+      <ul id='horizontal-list'>
+        <li><img src='images/grayceHopper.png'></img></li>
+        <li><h4>Project by Alan Campbell</h4></li>
+        <li><img src='images/FSlogo.png'></img></li>
+      </ul>
     </div>
-  </div>
+  </footer>
 
 </body>
 </html>
