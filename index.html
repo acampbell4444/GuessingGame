@@ -1,51 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet"  type="text/css" href="css/index.css">
   <title>Guessing Game</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <div id='app'>
+<div class='center container' id='app'>
+    <h1 id='pad' class='center'>Guessing Game</h1>
 
-    <div id='headers'>
-      <h1 class='head'>Guessing Game</h1>
-    </div>
-
-    <div id='main'>
-      <div id='input-parent'>
-        <form>
-          <input type='text' placeholder='#' autofocus='on' name="guess">
-          <input type='submit' value="Submit Your Guess">
-        </form>
+    <form class='center' id='pad'>
+      <input id='player-input' placeholder='#' maxlength="3">
+      <div class='row'>
+        <div class="btn-group btn-group-lg" id='pad' role="group" aria-label="...">
+          <button type="button" id='hint' class="btn btn-info">Hint</button>
+          <button type="button" id='submit' class="btn btn-success">Go</button>
+          <button type="button" id='reset' class="btn btn-danger">Reset</button>
+        </div>
       </div>
-
-      <div id='guesses'>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
-
-      <div id="menu-btns">
-        <button>Reset</button>
-        <button>Hint</button>
-        <!-- reset and hint buttons -->
-      </div>
+    </form>
+    <div class='row'>
+      <ul class='left'>
+        <li class='guess'>100</li>
+        <li class='guess'>99</li>
+        <li class='guess'>3</li>
+        <li class='guess'>44</li>
+        <li class='guess'>87</li>
+      </ul>
     </div>
   </div>
-
-
-
   <footer>
-    <div class='table'>
-      <ul id='horizontal-list'>
-        <li><img src='images/grayceHopper.png'></img></li>
-        <li><h4>Project by Alan Campbell</h4></li>
-        <li><img src='images/FSlogo.png'></img></li>
-      </ul>
+    <div class='row' id='pad'>
+      <div class='col-sm-4'>
+        <img class='img-responsive center' src="images/grayceHopper.png"></img>
+      </div>
+
+      <div class='col-sm-4'>
+        <h4 class='center'>Project by Alan Campbell</h4>
+      </div>
+
+      <div class='col-sm-4'>
+        <img class='img-responsive center' src='images/FSlogo.png'></img>
+      </div>
     </div>
   </footer>
 
