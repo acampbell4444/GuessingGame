@@ -45,7 +45,7 @@ height: 160px;
 width: 160px;
 text-align: center;
 font-size: 40px;
-margin: 0 0 10px 0;
+margin: 0 0 0px 50px;
 }
 
 #pad, h1 {
@@ -69,6 +69,7 @@ margin: 0 0 10px 0;
 
 #guess-list {
   height: 30px;
+  padding-right: 30px;
 }
 
 .guess {
@@ -94,9 +95,9 @@ margin: 0 0 10px 0;
   border-radius: 50%;
   width:60px;
   height:60px;
-  position:absolute;
-  top:270px;
-  right: 430px;
+  position: relative;
+  right: 60px;
+  bottom: -55px;
 }
 
 #app {
