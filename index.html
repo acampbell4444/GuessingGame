@@ -12,11 +12,14 @@
       <strong>Entry Not Valid!</strong> Please enter a number between 1 and 100.
     </div>
 
-    <h1 id='pad' class='head center'>Play the Guessing Game!</h1>
+    <h1 id='heady' class='head center'>Play the Guessing Game!</h1>
     <div id='subtitle'>Get 5 Tries to Guess a Number Between 1 and 100!</div>
     <form class='center' id='pad'>
-      <input id='player-input' placeholder='#' maxlength="3">
       <div class='row'>
+        <input id='player-input' placeholder='#' maxlength="3" autocomplete="off">
+        <button type="button" id='submit' class="btn btn-success">Go</button>
+       </div>
+    </form>
         
         <ul id='guess-list' class='left'>
         </ul>
@@ -24,12 +27,15 @@
         <div class='row'>
           <div class="btn-group btn-group-lg" id='pad' role="group" aria-label="...">
             <button type="button" id='hint' class="btn btn-info">Hint</button>
-            <button type="button" id='submit' class="btn btn-success">Go</button>
             <button type="button" id='reset' class="btn btn-danger">Reset</button>
           </div>
         </div>
-      </form>
       
+
+    <p id='remain'>Guesses Remaining: </p>
+      <ul class='lives-left' >
+      </ul>
+ 
     </div>
   </div>
   <footer>
