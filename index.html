@@ -14,29 +14,42 @@
 
     <h1 id='heady' class='head center'>Play the Guessing Game!</h1>
     <div id='subtitle'>Get 5 Tries to Guess a Number Between 1 and 100!</div>
+    <div class='row' id="initials">
+      <p class='init-text'>You achieved a High Score! Would you like to add your initials to the leaderboard?</p>
+      <button  id='enterInit' class="btn btn-xl btn-success">Yes Please!</button>
+      <button  id='declineInit' class="btn btn-xl btn-danger">No Thanks!</button>
+    </div>
+    <div class='row' id="initials-form">
+      <form class='center' id='pad'>
+        <div class='row'>
+           <p class='init-text'>Enter your intials to join the LeaderBoard!</p>
+          <input id='init' placeholder='abc' maxlength="3" autocomplete="off">
+          <button  id='submitInit' class="btn btn-success">Go</button>
+        </div>
+      </form>
+    </div>
     <form class='center' id='pad'>
       <div class='row'>
         <input id='player-input' placeholder='#' maxlength="3" autocomplete="off">
         <button  id='submit' class="btn btn-success">Go</button>
-       </div>
+      </div>
     </form>
-        
-        <ul id='guess-list' class='left'>
-        </ul>
-        
-        <div class='row'>
-          <div class="btn-group btn-group-lg" id='pad' role="group" aria-label="...">
-            <button type="button" id='hint' class="btn btn-info">Hint</button>
-            <button type="button" id='reset' class="btn btn-danger">Reset</button>
-          </div>
-        </div>
-      
-      <ul class='lives-left' >
-      </ul>
- 
+    <ul id='guess-list' class='left'>
+    </ul>
+
+    <div class='row'>
+      <div class="btn-group btn-group-lg" id='pad' role="group" aria-label="...">
+        <button type="button" id='hint' class="btn btn-info">Hint</button>
+        <button type="button" id='reset' class="btn btn-danger">Reset</button>
+      </div>
     </div>
-      <p class=high-score><p>
+
+    <ul class='lives-left' >
+    </ul>
+
   </div>
+  <ul class=high-score></ul>
+  
   <footer>
     <div class='row' id='pad'>
       <div class='col-sm-4'>

@@ -17,7 +17,7 @@ ul {
 }
 
 footer {
-  height: 70px;
+  height: 100px;
   border-top:1px solid black;
   position: absolute;
   bottom: 0;
@@ -132,3 +132,24 @@ margin: 0 0 0px 50px;
   transition-timing-function: linear;
 }
 
+#initials, #initials-form  {
+  padding-top: 30px;
+  display:none;
+  text-align: center;
+  margin: 0 auto;
+  background-color: white;
+  height: 350px;
+  width:350px;
+  border-radius: 50%;
+}
+
+.init-text {
+  margin: 20px;
+  font-family: 'Arial';
+  font-size: 15px;
+  padding: 20px;
+}
+
+#enterInit, #declineInit{
+  margin: 15px;
+}
