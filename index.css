@@ -19,7 +19,7 @@ ul {
 footer {
   height: 100px;
   border-top:1px solid black;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   background-color: white;
@@ -47,9 +47,8 @@ font-size: 40px;
 margin: 0 0 0px 50px;
 }
 
-#pad, h1 {
+#pad {
   padding: 20px;
-  
 }
 
 #heady {
@@ -64,6 +63,7 @@ margin: 0 0 0px 50px;
 
 .lives-left {
   margin-right:50px;
+  margin-bottom: 200px
 }
 
 #guess-list {
@@ -95,16 +95,17 @@ margin: 0 0 0px 50px;
   width:60px;
   height:60px;
   position: relative;
-  right: 60px;
-  bottom: -55px;
+  right: 75px;
+  bottom: -65px;
 }
 
 #app {
   background-color: rgba(256, 256, 256, 0.5);
-  margin: 20px auto;
+  margin: 20px auto 0 auto;
   border-radius: 30%;
   height: 100%;
   width:75%;
+  padding: 20px 0 20px 0;
 }
 
 .close {
@@ -153,3 +154,46 @@ margin: 0 0 0px 50px;
 #enterInit, #declineInit{
   margin: 15px;
 }
+
+.panel-primary {
+  margin: 20px auto 0 auto;
+  bottom: 0;
+  width: 75%;
+}
+
+.panel-title {
+  text-align: center;
+}
+
+.inner {
+   float:left;
+   width:100%;
+   overflow:hidden;
+   position:relative;
+}
+
+.lead-list {
+   clear:left;
+   float:left;
+   list-style:none;
+   margin:0;
+   padding:0;
+   position:relative;
+   left:50%;
+   text-align:center;
+}
+
+.led {
+   display:block;
+   float:left;
+   list-style:none;
+   margin:0;
+   padding:0;
+   position:relative;
+   right:50%;
+   font-size:10px;
+}
+}
+
+
+

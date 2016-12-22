@@ -22,50 +22,61 @@
     <div class='row' id="initials-form">
       <form class='center' id='pad'>
         <div class='row'>
-           <p class='init-text'>Enter your intials to join the LeaderBoard!</p>
-          <input id='init' placeholder='abc' maxlength="3" autocomplete="off">
-          <button  id='submitInit' class="btn btn-success">Go</button>
-        </div>
-      </form>
-    </div>
-    <form class='center' id='pad'>
-      <div class='row'>
-        <input id='player-input' placeholder='#' maxlength="3" autocomplete="off">
-        <button  id='submit' class="btn btn-success">Go</button>
-      </div>
-    </form>
-    <ul id='guess-list' class='left'>
-    </ul>
-
+         <p class='init-text'>Enter your intials to join the LeaderBoard!</p>
+         <input id='init' placeholder='abc' maxlength="3" autocomplete="off">
+         <button  id='submitInit' class="btn btn-success">Go</button>
+       </div>
+     </form>
+   </div>
+   <form class='center' id='pad'>
     <div class='row'>
-      <div class="btn-group btn-group-lg" id='pad' role="group" aria-label="...">
-        <button type="button" id='hint' class="btn btn-info">Hint</button>
-        <button type="button" id='reset' class="btn btn-danger">Reset</button>
-      </div>
+      <input id='player-input' placeholder='#' maxlength="3" autocomplete="off">
+      <button  id='submit' class="btn btn-success">Go</button>
     </div>
-
-    <ul class='lives-left' >
-    </ul>
-
+  </form>
+  <ul id='guess-list' class='left'>
+  </ul>
+  <div class='row'>
+    <div class="btn-group btn-group-lg" id='pad' role="group" aria-label="...">
+      <button type="button" id='hint' class="btn btn-info">Hint</button>
+      <button type="button" id='reset' class="btn btn-danger">Reset</button>
+    </div>
   </div>
-  <ul class=high-score></ul>
-  
-  <footer>
-    <div class='row' id='pad'>
-      <div class='col-sm-4'>
-        <img class='img-responsive center' src="images/grayceHopper.png"></img>
-      </div>
+  <ul class='lives-left' >
+  </ul>
+</div>          <!-- app end-->
 
-      <div class='col-sm-4'>
-        <h4 class='center'>Project by Alan Campbell</h4>
-      </div>
-
-      <div class='col-sm-4'>
-        <img class='img-responsive center' src='images/FSlogo.png'></img>
-      </div>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Leaderboard</h3>
+  </div>
+  <div class="panel-body">
+    <div class='inner'>
+    <ul class=lead-list></ul>
     </div>
-  </footer>
-  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-  <script src="GuessingGame-Part2/GuessingGame.js"></script>
+
+</div>
+</div>
+
+
+
+
+<footer>
+  <div class='row' id='pad'>
+    <div class='col-sm-4'>
+      <img class='img-responsive center' src="images/grayceHopper.png"></img>
+    </div>
+
+    <div class='col-sm-4'>
+      <h4 class='center'>Project by Alan Campbell</h4>
+    </div>
+
+    <div class='col-sm-4'>
+      <img class='img-responsive center' src='images/FSlogo.png'></img>
+    </div>
+  </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+<script src="GuessingGame-Part2/GuessingGame.js"></script>
 </body>
 </html>
