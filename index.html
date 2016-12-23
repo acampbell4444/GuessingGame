@@ -16,19 +16,26 @@
       <button type="button" class="btn btn-sm btn-success easy">Easy</button>
       <button type="button" class="btn btn-sm btn-danger hard">Hard</button>
     </div>
+    <div id='points'></div>
     <h1 id='heady' class='head center'>Play the Guessing Game!</h1>
     <div id='subtitle'>Get 5 Tries to Guess a Number Between 1 and 100!</div>
     <div class='row' id="initials">
-      <p class='init-text'>You achieved a High Score! Would you like to add your initials to the leaderboard?</p>
+      <p class='init-text'>You won! Would you like to add your initials to the Winner's List?</p>
       <button  id='enterInit' class="btn btn-xl btn-success">Yes Please!</button>
       <button  id='declineInit' class="btn btn-xl btn-danger">No Thanks!</button>
     </div>
     <div class='row' id="initials-form">
       <form class='center' id='pad'>
         <div class='row'>
-         <p class='init-text'>Enter your intials to join the LeaderBoard!</p>
-         <input id='init' placeholder='abc' maxlength="3" autocomplete="off">
+         <p class='init-text'>Enter your intials to join the Winner's List!</p>
+         <input id='init' placeholder='abc' maxlength="3" autocomplete="off" patter='taco'>
          <button  id='submitInit' class="btn btn-success">Go</button>
+         <div class='row'>
+           <div class="alert alert-danger fade in" id='error2'>
+            <a href="#" class="close" data-dismiss="alert">&times;</a>
+            <strong>Entry Not Valid!</strong> Use at least 2 letters. Letters Only.
+          </div>
+        </div>
        </div>
      </form>
    </div>
