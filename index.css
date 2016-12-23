@@ -44,7 +44,7 @@ height: 160px;
 width: 160px;
 text-align: center;
 font-size: 40px;
-margin: 0 0 0px 50px;
+margin: 0 0 20px 50px;
 }
 
 #pad {
@@ -53,7 +53,7 @@ margin: 0 0 0px 50px;
 
 #heady {
   font-family: 'Arial Black';
-  font-size: 25px;
+  font-size: 22px;
   margin-top: 20px;
 }
 
@@ -86,7 +86,7 @@ margin: 0 0 0px 50px;
 }
 
 #subtitle, h1 {
-  font-family: 'Arial Black';
+  font-family: 'Arial';
   font-size: 15px;
 }
 
@@ -156,9 +156,10 @@ margin: 0 0 0px 50px;
 }
 
 .panel-primary {
-  margin: 20px auto 0 auto;
-  bottom: 0;
-  width: 75%;
+  margin: 0 auto;
+  position: relative;
+  bottom: -50px;
+  width: 75%
 }
 
 .panel-title {
@@ -188,11 +189,16 @@ margin: 0 0 0px 50px;
    float:left;
    list-style:none;
    margin:0;
-   padding:0;
+   padding: 0 5px 0 5px;
    position:relative;
    right:50%;
    font-size:10px;
 }
+
+.resetLeaders {
+  float: right;
+  position:relative;
+  top: -20px;
 }
 
 
