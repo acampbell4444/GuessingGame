@@ -45,6 +45,7 @@ footer {
   text-align: center;
   font-size: 40px;
   margin: 0 0 20px 50px;
+  color: green;
 }
 
 #pad {
@@ -53,8 +54,9 @@ footer {
 
 #heady {
   font-family: 'Arial Black';
-  font-size: 22px;
+  font-size: 20px;
   margin-top: 20px;
+  padding: 20px;
 }
 
 .life {
@@ -87,7 +89,7 @@ footer {
 
 #subtitle, h1 {
   font-family: 'Arial';
-  font-size: 15px;
+  font-size: 13px;
 }
 
 #submit {
@@ -98,6 +100,7 @@ footer {
   right: 75px;
   bottom: -65px;
   background-color:green;
+  transition: all 1s;
 }
 
 #app {
@@ -204,7 +207,7 @@ footer {
 
 .spin {
   transform: rotateY( 360deg );
-  transition: all 2s;
+  transition: all 1s;
 }
 
 
