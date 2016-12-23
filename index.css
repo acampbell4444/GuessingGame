@@ -37,14 +37,14 @@ footer {
 }
 
 #player-input{
--webkit-border-radius: 50px;
--moz-border-radius: 50px;
-border-radius: 50%;
-height: 160px;
-width: 160px;
-text-align: center;
-font-size: 40px;
-margin: 0 0 20px 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50%;
+  height: 160px;
+  width: 160px;
+  text-align: center;
+  font-size: 40px;
+  margin: 0 0 20px 50px;
 }
 
 #pad {
@@ -97,6 +97,7 @@ margin: 0 0 20px 50px;
   position: relative;
   right: 75px;
   bottom: -65px;
+  background-color:green;
 }
 
 #app {
@@ -167,32 +168,32 @@ margin: 0 0 20px 50px;
 }
 
 .inner {
-   float:left;
-   width:100%;
-   overflow:hidden;
-   position:relative;
+ float:left;
+ width:100%;
+ overflow:hidden;
+ position:relative;
 }
 
 .lead-list {
-   clear:left;
-   float:left;
-   list-style:none;
-   margin:0;
-   padding:0;
-   position:relative;
-   left:50%;
-   text-align:center;
+ clear:left;
+ float:left;
+ list-style:none;
+ margin:0;
+ padding:0;
+ position:relative;
+ left:50%;
+ text-align:center;
 }
 
 .led {
-   display:block;
-   float:left;
-   list-style:none;
-   margin:0;
-   padding: 0 5px 0 5px;
-   position:relative;
-   right:50%;
-   font-size:10px;
+ display:block;
+ float:left;
+ list-style:none;
+ margin:0;
+ padding: 0 5px 0 5px;
+ position:relative;
+ right:50%;
+ font-size:10px;
 }
 
 .resetLeaders {
@@ -201,5 +202,9 @@ margin: 0 0 20px 50px;
   top: -20px;
 }
 
+.spin {
+  transform: rotateY( 360deg );
+  transition: all 2s;
+}
 
 
