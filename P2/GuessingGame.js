@@ -1,6 +1,16 @@
-function generateWinningNumber() {
-	return Math.ceil(Math.random()*100);
-}
+function generateWinningNumber(game,wN) {
+	while(true){
+		var x = Math.ceil(Math.random()*100);
+		if(game){
+			if(x!== game.winningNumber&&!wN.includes(x)&&!game.pastGuesses.includes(x)) {
+				 	game.wN.push(x)
+				 	return game.wN[game.wN.length-1];
+			}
+		}else{
+			return x;
+		}
+	}
+};
 
 function shuffle(array) {
 	var m = array.length, t, i;
@@ -18,6 +28,7 @@ function Game(){
 	this.playersGuess=null;
 	this.pastGuesses=[];
 	this.winningNumber=generateWinningNumber();
+	this.wN=[];
 	console.log(this.winningNumber)
 	hint=false
 	$('h1').text('Play the Guessing Game!'); 
@@ -117,9 +128,11 @@ Game.prototype.checkGuess = function() {
 };
 
 Game.prototype.provideHint=function(){
+	var game=this;
+	var Wn=game.wN
 	var gw = generateWinningNumber;
-	return localStorage.getItem('dificile')==='easy' ? shuffle([this.winningNumber,gw(),gw(),gw(),gw(),gw()]) :
-	shuffle([this.winningNumber,gw(),gw(),gw(),gw(),gw(),gw(),gw(),gw(),gw()]);
+	return localStorage.getItem('dificile')==='easy' ? shuffle([this.winningNumber,gw(game,Wn),gw(game,Wn),gw(game,Wn),gw(game,Wn),gw(game,Wn)]) :
+	shuffle([this.winningNumber,gw(game,Wn),gw(game,Wn),gw(game,Wn),gw(game,Wn),gw(game,Wn),gw(game,Wn),gw(game,Wn),gw(game,Wn),gw(game,Wn)]);
 };
 
 var newGame = function() {
