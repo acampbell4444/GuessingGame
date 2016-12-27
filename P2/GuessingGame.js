@@ -85,7 +85,8 @@ Game.prototype.checkGuess = function() {
 				$('body').css({'background-image': "url('images/sad.jpg')"});
 				$('#hint, #submit').prop("disabled",true);
 				$('#subtitle').text("Press the Reset button to play again!")
-				return 'You Lose.';
+				$('#points').text("Points: 0") 
+				return 'You Lose. The winning number was: ' + this.winningNumber + '.';
 			}
 			else {
 				var diff = this.difference();
@@ -180,8 +181,8 @@ $(function() {
 	$('#submit').click(function(e) {
 		e.preventDefault();
 		$("#error").slideUp();
-		makeAGuess(game);
 		$('#points').text("Points: " + (10-game.pastGuesses.length - (localStorage.getItem('dificile') === 'easy' ? hint ? 4 : 0 : hint ? 1 : 0 )))
+		makeAGuess(game);
 	});
 
 	$('#hint').click(function() {

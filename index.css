@@ -25,6 +25,15 @@ footer {
   background-color: white;
 }
 
+#app {
+  background-color: rgba(256, 256, 256, 0.5);
+  margin: 0 auto;
+  border-radius: 30%;
+  height: 100%;
+  width:75%;
+  padding: 20px 0 20px 0;
+}
+
 .center {
   text-align: center;
   margin: 0 auto;
@@ -101,15 +110,6 @@ footer {
   bottom: -65px;
   background-color:green;
   transition: all 1s;
-}
-
-#app {
-  background-color: rgba(256, 256, 256, 0.5);
-  margin: 20px auto 0 auto;
-  border-radius: 30%;
-  height: 100%;
-  width:75%;
-  padding: 20px 0 20px 0;
 }
 
 .close {
