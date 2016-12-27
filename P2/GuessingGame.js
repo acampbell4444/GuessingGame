@@ -23,7 +23,7 @@ function Game(){
 	$('h1').text('Play the Guessing Game!'); 
 	$('#subtitle').text('Get 5 Tries to Guess a Number Between 1 and 100!'); 
 	if(!localStorage.getItem( 'ldrs' )){$(".resetLeaders").trigger('click')}
-	localStorage.setItem('ldrs', 'ZZZ 10')
+	if(localStorage.getItem('ldrs'==null)){localStorage.setItem('ldrs', 'ZZZ 10')}
 	var lead=localStorage.getItem( 'ldrs' )
 	$('.lead-list').empty()
 	var leaderArray = lead.split(', ').slice(1).sort((a,b)=>b.replace(/[^0-9\.]+/g, '')- a.replace(/[^0-9\.]+/g, '') ).slice(0,50);
