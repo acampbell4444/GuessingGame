@@ -49,11 +49,11 @@ footer {
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   border-radius: 50%;
-  height: 160px;
-  width: 160px;
+  height: 110px;
+  width: 110px;
   text-align: center;
   font-size: 40px;
-  margin: 0 0 20px 50px;
+  margin: 0 0 10px 20px;
   color: green;
 }
 
@@ -64,7 +64,7 @@ footer {
 #heady {
   font-family: 'Arial Black';
   font-size: 20px;
-  margin-top: 20px;
+  margin-top: 0px;
   padding: 20px;
 }
 
@@ -103,11 +103,11 @@ footer {
 
 #submit {
   border-radius: 50%;
-  width:60px;
-  height:60px;
+  width:45px;
+  height:45px;
   position: relative;
-  right: 75px;
-  bottom: -65px;
+  right: 65px;
+  bottom: -45px;
   background-color:green;
   transition: all 1s;
 }
