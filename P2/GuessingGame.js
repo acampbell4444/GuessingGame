@@ -169,9 +169,9 @@ function Game(){
 	if(localStorage.getItem('ldrs'==null)){localStorage.setItem('ldrs', 'ZZZ 10')}
 	var lead=localStorage.getItem( 'ldrs' )
 	$('.lead-list').empty()
-	var leaderArray = lead.split(', ').slice(1).sort((a,b)=>b.replace(/[^0-9\.]+/g, '')- a.replace(/[^0-9\.]+/g, '') ).slice(0,50);
+	var leaderArray = lead.split(', ').slice(1).sort(function(a,b){ return b.replace(/[^0-9\.]+/g, '')- a.replace(/[^0-9\.]+/g, '') }).slice(0,50);
 	this.leaderArray = leaderArray
-	leaderArray = leaderArray.map((e,i)=>" " + (i+1)+') ' + e)  ;
+	leaderArray = leaderArray.map(function(e,i){return " " + (i+1)+') ' + e})  ;
 	for(var i = 0; i<leaderArray.length;i++){
 		$('.lead-list').append("<li class='led'>"+leaderArray[i]+"</li>")
 	}
