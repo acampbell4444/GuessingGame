@@ -1,7 +1,7 @@
 $(function() {
 
 	$('#hint').text('Hint -4');
-	var hint= false
+	var hint= false;
 	var game = newGame();
 	$("#error, #error2").hide();
 	$('.easy').prop("disabled",true);
@@ -46,7 +46,7 @@ $(function() {
 		hint=true
 		$('#points').text('Points: ' + (10-game.pastGuesses.length - (localStorage.getItem('dificile') === 'easy' ? hint ? 4 : 0 : hint ? 1 : 0 )))
 		var hints = game.provideHint();
-		$('h1').text('The winning number is: ' + hints.map((e,i,a)=>i===a.length-1 ? "or " + e : e).join(', '));
+		$('h1').text('The winning number is: ' + hints.map(function(e,i,a){return i===a.length-1 ? "or " + e : e }).join(', '));
 		$('.dif').hide();
 		$('#hint').prop("disabled",true);
 	});
