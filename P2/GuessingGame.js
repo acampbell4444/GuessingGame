@@ -38,8 +38,8 @@ $(function() {
 	$('#submit').click(function(e) {
 		e.preventDefault();
 		$("#error").slideUp();
-		$('#points').text("Points: " + (10-game.pastGuesses.length - (localStorage.getItem('dificile') === 'easy' ? hint ? 4 : 0 : hint ? 1 : 0 )))
 		makeAGuess(game);
+		$('#points').text("Points: " + (10-game.pastGuesses.length - (localStorage.getItem('dificile') === 'easy' ? hint ? 4 : 0 : hint ? 1 : 0 )))
 	});
 
 	$('#hint').click(function() {
