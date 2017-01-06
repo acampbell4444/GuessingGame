@@ -29,7 +29,6 @@ function Game(){
 	this.pastGuesses=[];
 	this.winningNumber=generateWinningNumber();
 	this.wN=[];
-	console.log(this.winningNumber)
 	hint=false
 	$('h1').text('Play the Guessing Game!'); 
 	$('#subtitle').text('Get 5 Tries to Guess a Number Between 1 and 100!'); 
@@ -169,7 +168,6 @@ $(function() {
 
 	$('#player-input').keyup(function(){
 		var attempt=$('#player-input').val()
-		console.log(attempt)
 		if((attempt!="")&&(isNaN(attempt)||attempt <1||attempt>100 )){
 			$('#submit').prop("disabled",true);
 			$('#error').slideDown(); throw "no soup for you"
