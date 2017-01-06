@@ -1,3 +1,136 @@
+$(function() {
+
+	$('#hint').text('Hint -4');
+	var hint= false
+	var game = newGame();
+	$("#error, #error2").hide();
+	$('.easy').prop("disabled",true);
+
+	$('#player-input').click(function(){
+		$('#submit').removeClass('spin');
+		$('#points').text("Points: " + (10-game.pastGuesses.length - (localStorage.getItem('dificile') === 'easy' ? hint ? 4 : 0 : hint ? 1 : 0 )))
+		$('.dif').hide();
+	});
+
+	$('#player-input').keyup(function(){
+		var attempt=$('#player-input').val()
+		if((attempt!="")&&(isNaN(attempt)||attempt <1||attempt>100 )){
+			$('#submit').prop("disabled",true);
+			$('#error').slideDown(); throw "no soup for you"
+		}else{
+			$('#submit').prop("disabled",false);
+			$('#error').slideUp();
+		}
+	});
+
+	$('#init').keyup(function(){
+		$('#error2').slideUp();
+		var attempt=$('#init').val()
+		if(attempt===""||!(/^[a-zA-Z]+$/.test(attempt))||attempt.length<2){
+			$('#submitInit').prop("disabled",true);
+			if(!(/^[a-zA-Z]+$/.test(attempt))&&attempt!=''){$('#error2').slideDown(); throw "no soup for you"}
+		}else{
+			$('#submitInit').prop("disabled",false);
+			$('#error2').slideUp();
+		}
+	});
+
+	$('#submit').click(function(e) {
+		e.preventDefault();
+		$("#error").slideUp();
+		$('#points').text("Points: " + (10-game.pastGuesses.length - (localStorage.getItem('dificile') === 'easy' ? hint ? 4 : 0 : hint ? 1 : 0 )))
+		makeAGuess(game);
+	});
+
+	$('#hint').click(function() {
+		hint=true
+		$('#points').text('Points: ' + (10-game.pastGuesses.length - (localStorage.getItem('dificile') === 'easy' ? hint ? 4 : 0 : hint ? 1 : 0 )))
+		var hints = game.provideHint();
+		$('h1').text('The winning number is: ' + hints.map((e,i,a)=>i===a.length-1 ? "or " + e : e).join(', '));
+		$('.dif').hide();
+		$('#hint').prop("disabled",true);
+	});
+
+	$('#reset').click(function() {
+		game = newGame();
+		$('#player-input').val("");
+		$('#init').val('')
+		$('#player-input').show();
+		$('#submit').show();
+		$('#hint, #submit').prop("disabled",false);
+		$('#submitInit').prop("disabled",true);
+		$('#points').text("")
+		$('.dif').show();
+		$('#error2,#error').slideUp();
+		$('#initials-form').hide();
+		hint=false
+	});
+
+	$(".close").click(function(){
+		$("#error, #error2").slideUp();
+	});
+
+	$("#enterInit").click(function(e){
+		e.preventDefault();
+		$("#initials").hide();
+		$("#initials-form").fadeIn()
+		$('#init').val('');
+	});
+
+	$("#declineInit").click(function(e){
+		e.preventDefault();
+		$("#initials").hide();
+		$('#reset').trigger('click');
+	});
+
+	$("#submitInit").click(function(e){
+		e.preventDefault();
+		var init = $('#init').val();
+		if(init)
+		if(!(/^[a-zA-Z]+$/.test(init))||init.length<2){$('#error2').slideDown(); throw "no soup for you"}
+		var playScore=10-game.pastGuesses.length - (localStorage.getItem('dificile') === 'easy' ? hint ? 4 : 0 : hint ? 1 : 0 )
+		localStorage.setItem( 'highScore', playScore );
+		localStorage.setItem('ldrs', localStorage.getItem( 'ldrs' )+', '+init + "  " + localStorage.getItem('highScore') + 
+			' points')
+		$('#error2').slideUp();
+		$("#initials-form").hide();
+		$('#reset').trigger('click');
+	});
+
+	$(".resetLeaders").click(function(e){
+		e.preventDefault();
+		localStorage.setItem( 'highScore',0);
+		localStorage.setItem('ldrs','XXX  0 points') 
+		$('.lead-list').empty()
+	});
+
+	$('.hard').click(function(e){
+		e.preventDefault();
+		localStorage.setItem('dificile','hard')
+		$('#hint').text('Hint -1')
+		$('.hard').prop("disabled",true);
+		$('.easy').prop("disabled",false);
+		$('#submit').css({'background-color': 'red'});
+		$('#player-input').css({'color': 'red'});
+	});
+
+	$('.easy').click(function(e){
+		e.preventDefault();
+		localStorage.setItem('dificile','easy')
+		$('#hint').text('Hint -4')
+		$('.easy').prop("disabled",true);
+		$('.hard').prop("disabled",false);
+		$('#submit').css({'background-color': 'green'});
+		$('#player-input').css({'color': 'green'});
+	});
+
+	$('#init').click(function(){
+		$('#error2').slideUp();
+	});
+
+
+});
+
 function generateWinningNumber(game,wN) {
 	while(true){
 		var x = Math.ceil(Math.random()*100);
@@ -152,138 +285,7 @@ function makeAGuess(game) {
 	$('#heady').text(output);
 }
 
-$(function() {
 
-	$('#hint').text('Hint -4');
-	var hint= false
-	var game = newGame();
-	$("#error, #error2").hide();
-	$('.easy').prop("disabled",true);
-
-	$('#player-input').click(function(){
-		$('#submit').removeClass('spin');
-		$('#points').text("Points: " + (10-game.pastGuesses.length - (localStorage.getItem('dificile') === 'easy' ? hint ? 4 : 0 : hint ? 1 : 0 )))
-		$('.dif').hide();
-	});
-
-	$('#player-input').keyup(function(){
-		var attempt=$('#player-input').val()
-		if((attempt!="")&&(isNaN(attempt)||attempt <1||attempt>100 )){
-			$('#submit').prop("disabled",true);
-			$('#error').slideDown(); throw "no soup for you"
-		}else{
-			$('#submit').prop("disabled",false);
-			$('#error').slideUp();
-		}
-	});
-
-	$('#init').keyup(function(){
-		$('#error2').slideUp();
-		var attempt=$('#init').val()
-		if(attempt===""||!(/^[a-zA-Z]+$/.test(attempt))||attempt.length<2){
-			$('#submitInit').prop("disabled",true);
-			if(!(/^[a-zA-Z]+$/.test(attempt))&&attempt!=''){$('#error2').slideDown(); throw "no soup for you"}
-		}else{
-			$('#submitInit').prop("disabled",false);
-			$('#error2').slideUp();
-		}
-	});
-
-	$('#submit').click(function(e) {
-		e.preventDefault();
-		$("#error").slideUp();
-		$('#points').text("Points: " + (10-game.pastGuesses.length - (localStorage.getItem('dificile') === 'easy' ? hint ? 4 : 0 : hint ? 1 : 0 )))
-		makeAGuess(game);
-	});
-
-	$('#hint').click(function() {
-		hint=true
-		$('#points').text('Points: ' + (10-game.pastGuesses.length - (localStorage.getItem('dificile') === 'easy' ? hint ? 4 : 0 : hint ? 1 : 0 )))
-		var hints = game.provideHint();
-		$('h1').text('The winning number is: ' + hints.map((e,i,a)=>i===a.length-1 ? "or " + e : e).join(', '));
-		$('.dif').hide();
-		$('#hint').prop("disabled",true);
-	});
-
-	$('#reset').click(function() {
-		game = newGame();
-		$('#player-input').val("");
-		$('#init').val('')
-		$('#player-input').show();
-		$('#submit').show();
-		$('#hint, #submit').prop("disabled",false);
-		$('#submitInit').prop("disabled",true);
-		$('#points').text("")
-		$('.dif').show();
-		$('#error2,#error').slideUp();
-		$('#initials-form').hide();
-		hint=false
-	});
-
-	$(".close").click(function(){
-		$("#error, #error2").slideUp();
-	});
-
-	$("#enterInit").click(function(e){
-		e.preventDefault();
-		$("#initials").hide();
-		$("#initials-form").fadeIn()
-		$('#init').val('');
-	});
-
-	$("#declineInit").click(function(e){
-		e.preventDefault();
-		$("#initials").hide();
-		$('#reset').trigger('click');
-	});
-
-	$("#submitInit").click(function(e){
-		e.preventDefault();
-		var init = $('#init').val();
-		if(init)
-		if(!(/^[a-zA-Z]+$/.test(init))||init.length<2){$('#error2').slideDown(); throw "no soup for you"}
-		var playScore=10-game.pastGuesses.length - (localStorage.getItem('dificile') === 'easy' ? hint ? 4 : 0 : hint ? 1 : 0 )
-		localStorage.setItem( 'highScore', playScore );
-		localStorage.setItem('ldrs', localStorage.getItem( 'ldrs' )+', '+init + "  " + localStorage.getItem('highScore') + 
-			' points')
-		$('#error2').slideUp();
-		$("#initials-form").hide();
-		$('#reset').trigger('click');
-	});
-
-	$(".resetLeaders").click(function(e){
-		e.preventDefault();
-		localStorage.setItem( 'highScore',0);
-		localStorage.setItem('ldrs','XXX  0 points') 
-		$('.lead-list').empty()
-	});
-
-	$('.hard').click(function(e){
-		e.preventDefault();
-		localStorage.setItem('dificile','hard')
-		$('#hint').text('Hint -1')
-		$('.hard').prop("disabled",true);
-		$('.easy').prop("disabled",false);
-		$('#submit').css({'background-color': 'red'});
-		$('#player-input').css({'color': 'red'});
-	});
-
-	$('.easy').click(function(e){
-		e.preventDefault();
-		localStorage.setItem('dificile','easy')
-		$('#hint').text('Hint -4')
-		$('.easy').prop("disabled",true);
-		$('.hard').prop("disabled",false);
-		$('#submit').css({'background-color': 'green'});
-		$('#player-input').css({'color': 'green'});
-	});
-
-	$('#init').click(function(){
-		$('#error2').slideUp();
-	});
-
-
-});
 
 
 
